@@ -12,6 +12,8 @@
  *
  *= require_tree .
  *= require semantic_ui/semantic.min
- *= require_self
  *= require home
+ *= require users
+ *= require sessions
+ *= require_self
  */
