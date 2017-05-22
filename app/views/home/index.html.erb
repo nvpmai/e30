@@ -34,9 +34,9 @@
 
 <script type="text/javascript">
   var page = 1
-  const total_pages = <%= @articles.total_pages %>
+  var total_pages = <%= @articles.total_pages %>
   $(window).scroll(function() {
-   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+   if (isBottom()) {
     if (total_pages > page) {
       $( ".loader" ).addClass('active')
       page += 1

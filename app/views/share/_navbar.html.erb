@@ -2,7 +2,27 @@
   <div class='ui center aligned container'>
     <a class="item" href="/">Home</a>
     <div class="right menu">
-      <a class="item">Sign in / Sign up</a>
+      <% if false %>
+        <span class="item">Hi <%= current_user.name %></span>
+        <%= link_to "Sign out", '/', class: 'item'  %>
+      <% else %>
+        <%= link_to "Sign in", '/', class: 'item' %>
+        <%= link_to "Sign up", '/', class: 'item' %>
+      <% end %>
+      <div class="item">
+        <div class="ui transparent icon input">
+            <%= form_tag "/search", method: "get", id: 'search_form' do %>
+              <input name="term" type="text" placeholder="Search for everything on e30" size="25" />
+            <% end %>
+          <i class="search link icon" onclick="submitForm()"></i>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+  function submitForm() {
+    $('#search_form').submit()
+  }
+</script>
