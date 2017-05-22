@@ -15,20 +15,3 @@
  *= require_self
  *= require home
  */
-
-.description {
-	font-size: initial;
-}
-
-html, body {
-  height: 100%;
-}
-
-.ui.grid {
-  height: 100%;
-}
-
-#loading_segment {
-	border: none;
-	margin-top: 30px; 
-}

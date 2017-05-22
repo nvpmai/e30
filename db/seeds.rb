@@ -5,7 +5,7 @@ images = [
   'http://images.all-free-download.com/images/graphicthumb/tree_meadow_nature_220408.jpg'
 ]
 
-10.times do
+100.times do
   Article.create(
     title: Faker::Hacker.say_something_smart, 
     headline: Faker::Hacker.say_something_smart,
