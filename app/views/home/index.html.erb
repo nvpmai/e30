@@ -1,0 +1,52 @@
+<div class='ui container' id="articles">
+  <!-- Featured post / -->
+  <!-- <div class="ui stackable two cards">
+    <div class="ui raised card">
+      <div class="image">
+        <img src="http://www.fullscreensavers.com/pics/nature02.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Cute Cat</div>
+        <div class="description">
+          <p>Many people also have their own barometers for what makes a cute dog</p>
+        </div>
+      </div>
+    </div>
+    <div class="ui raised card">
+      <div class="image">
+        <img src="http://images.all-free-download.com/images/graphicthumb/tree_meadow_nature_220408.jpg">
+      </div>
+      <div class="content">
+        <div class="header">Cute Cat</div>
+        <div class="description">
+          <p>Many people also have their own barometers for what makes a cute dog. Many people also have their own barometers for what makes a cute dog.</p>
+        </div>
+      </div>
+    </div>
+  </div> -->
+  <!-- End featured post / -->
+  <%= render partial: 'share/group', locals: {articles: @articles} %>
+</div>
+<div class="ui segment" id="loading_segment">
+  <div class="ui loader"></div>
+</div>
+
+
+<script type="text/javascript">
+  var page = 1
+  const total_pages = <%= @articles.total_pages %>
+  $(window).scroll(function() {
+   if($(window).scrollTop() + $(window).height() == $(document).height()) {
+    if (total_pages > page) {
+      $( ".loader" ).addClass('active')
+      page += 1
+      $.ajax({
+        method: 'get',
+        url: '/?page=' + page,
+        dataType: "script"
+      }).done(function() {
+         $( ".loader" ).removeClass('active')
+      })
+    }}
+  })
+</script>
