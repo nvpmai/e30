@@ -6,8 +6,8 @@
         <span class="item">Hi <%= current_user.name %></span>
         <%= link_to "Sign out", '/', class: 'item'  %>
       <% else %>
-        <%= link_to "Sign in", '/', class: 'item' %>
-        <%= link_to "Sign up", '/', class: 'item' %>
+        <a class="item" onclick="openNewSessionModal()">Sign in</a>
+        <a class="item" onclick="openNewUserModal()">Sign up</a>
       <% end %>
       <div class="item">
         <div class="ui transparent icon input">
@@ -24,5 +24,11 @@
 <script type="text/javascript">
   function submitForm() {
     $('#search_form').submit()
+  }
+  function openNewUserModal() {
+    $('#new_user_modal').modal('show')
+  }
+  function openNewSessionModal() {
+    $('#new_session_modal').modal('show')
   }
 </script>

@@ -1,0 +1,38 @@
+<div class="ui modal small" id="new_user_modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Create new account
+  </div>
+  <div class="content">
+    <%= form_for :user, url: '/users', html: {class: 'ui form', id: 'new_user_form'}, remote: true do |f| %>
+      <div class="field">
+        <%= f.label :email %>
+        <%= f.email_field :email %>
+      </div>
+      <div class="field">
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </div>
+      <div class="field">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <div class="ui submit button">Submit</div>
+      <div class="ui error message"></div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $.fn.form.settings.rules.matchPassword = function() {
+    return $('#password_new').val() != $('#password_confirmation').val()
+  };
+
+  $('#new_user_form').form({
+    fields: {
+      'user[email]': ['email'],
+      'user[password]': ['minLength[6]'],
+      'user[password_confirmation]': ['matchPassword']
+   }   
+  })
+</script>

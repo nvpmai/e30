@@ -31,6 +31,7 @@ gem 'jbuilder', '~> 2.5'
 # gem 'redis', '~> 3.0'
 # Pagination
 gem 'kaminari'
+gem 'bcrypt'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
