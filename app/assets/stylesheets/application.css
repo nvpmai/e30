@@ -11,5 +11,24 @@
  * It is generally better to create a new file per style scope.
  *
  *= require_tree .
+ *= require semantic_ui/semantic.min
  *= require_self
+ *= require home
  */
+
+.description {
+	font-size: initial;
+}
+
+html, body {
+  height: 100%;
+}
+
+.ui.grid {
+  height: 100%;
+}
+
+#loading_segment {
+	border: none;
+	margin-top: 30px; 
+}
