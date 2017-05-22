@@ -2,9 +2,9 @@
   <div class='ui center aligned container'>
     <a class="item" href="/">Home</a>
     <div class="right menu">
-      <% if false %>
-        <span class="item">Hi <%= current_user.name %></span>
-        <%= link_to "Sign out", '/', class: 'item'  %>
+      <% if current_user %>
+        <%= link_to "Liked articles", '/', class: 'item'  %>
+        <%= link_to "Sign out", '/logout', method: 'delete', class: 'item'  %>
       <% else %>
         <a class="item" onclick="openNewSessionModal()">Sign in</a>
         <a class="item" onclick="openNewUserModal()">Sign up</a>

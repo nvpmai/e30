@@ -25,7 +25,7 @@
 
 <script type="text/javascript">
   $.fn.form.settings.rules.matchPassword = function() {
-    return $('#password_new').val() != $('#password_confirmation').val()
+    return $('#user_password').val() == $('#user_password_confirmation').val()
   };
 
   $('#new_user_form').form({
