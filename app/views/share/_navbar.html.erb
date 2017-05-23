@@ -3,7 +3,7 @@
     <a class="item" href="/">Home</a>
     <div class="right menu">
       <% if current_user %>
-        <%= link_to "Liked articles", '/', class: 'item'  %>
+        <%= link_to "Liked articles", '/articles', class: 'item'  %>
         <%= link_to "Sign out", '/logout', method: 'delete', class: 'item'  %>
       <% else %>
         <a class="item" onclick="openNewSessionModal()">Sign in</a>

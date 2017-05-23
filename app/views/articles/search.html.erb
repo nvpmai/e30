@@ -1,4 +1,4 @@
-<div class='ui container' id="articles">
+<div class='ui container' id="search_articles">
   <%= render partial: 'share/group' %>
 </div>
 <div class="ui segment" id="loading_segment">
@@ -7,15 +7,16 @@
 
 <script type="text/javascript">
   var page = 1
-  var total_pages = <%= @articles.total_pages %>
+  var searchTerm = "<%= params[:term] %>"
+  var totalPages = <%= @articles.total_pages %>
   $(window).scroll(function() {
    if (isBottom()) {
-    if (total_pages > page) {
+    if (totalPages > page) {
       $( ".loader" ).addClass('active')
       page += 1
       $.ajax({
         method: 'get',
-        url: '/?page=' + page,
+        url: '/search?term=' + searchTerm + '&page=' + page,
         dataType: "script"
       }).done(function() {
          $( ".loader" ).removeClass('active')

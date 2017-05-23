@@ -5,11 +5,14 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/search' => 'articles#index'
+  get '/search' => 'articles#search'
   
-  get    '/login',   to: 'sessions#new'
-  post   '/login',   to: 'sessions#create'
-  delete '/logout',  to: 'sessions#destroy'
+  get    '/login' => 'sessions#new'
+  post   '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
   resources :users, only: [:create]
+  resources :articles, only: [:index, :show]
+
+  post '/toggle_like' => 'users#toggle_like'
 end
