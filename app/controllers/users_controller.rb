@@ -9,6 +9,16 @@ class UsersController < ApplicationController
 	  end
 	end
 
+	def toggle_like
+		if current_user.articles.exists?(params[:id])
+			current_user.articles.delete(Article.find(params[:id]))
+			render json: { liked: false }
+		else
+			current_user.articles << Article.find(params[:id])
+			render json: { liked: true }
+		end
+	end
+
 	private
 
 	def user_params

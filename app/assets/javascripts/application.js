@@ -15,4 +15,5 @@
 //= require turbolinks
 //= require semantic_ui/semantic.min
 //= require utils
+//= require articles
 //= require_tree .
