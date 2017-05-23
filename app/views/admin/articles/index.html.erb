@@ -15,7 +15,7 @@
         <td><%= image_tag article.featured_image, size: '100x80' %></td>
         <td>
           <a href="<%= edit_admin_article_path(article) %>" class="ui green button">Edit</a>
-          <a data-method='delete' data-confirm='<%= t(:are_you_sure) %>'
+          <a data-method='delete' data-confirm='Are you sure you want to delete this?'
              class="ui red button" href="<%= admin_article_path(article) %>">Delete</a>
         </td>
       </tr>
