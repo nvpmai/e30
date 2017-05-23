@@ -6,6 +6,10 @@ class ArticlesController < ApplicationController
 		liked_ids
 	end
 
+	def show
+		@article = Article.find(params[:id])
+	end
+
 	def search
 		@articles = Article.where('title ILIKE :search OR headline ILIKE :search OR content ILIKE :search', search: "%#{params[:term]}%")
 								.order(:created_at).page(params[:page]).per(9)

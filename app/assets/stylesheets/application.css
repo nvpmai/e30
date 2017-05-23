@@ -15,5 +15,6 @@
  *= require home
  *= require users
  *= require sessions
+ *= require articles
  *= require_self
  */
