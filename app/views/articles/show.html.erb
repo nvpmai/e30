@@ -1,0 +1,12 @@
+<div class='ui container center aligned article_container'>
+  <div class="ui header huge article_header"><%= @article.title %></div>
+  <div class="ui header medium article_headline"><%= @article.headline %></div>
+  <div class="ui segment article_segment">
+    <div class="image ui rounded">
+      <img class="ui left float image" src="<%= @article.featured_image %>">
+    </div>
+    <div class="content">
+      <%= @article.content %>
+    </div>
+  </div>
+</div>

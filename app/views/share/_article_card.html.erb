@@ -1,8 +1,10 @@
 <div class="ui raised card">
-	<div class="image">
+  <div class="image article_link">
+    <a href="<%= article_path(article) %>"></a>
     <img src="<%= article.featured_image %>">
   </div>
-  <div class="content">
+  <div class="content article_link">
+    <a href="<%= article_path(article) %>"></a>
     <div class="header"><%= article.title %></div>
     <div class="description">
       <p><%= article.headline %></p>
