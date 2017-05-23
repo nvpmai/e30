@@ -11,7 +11,7 @@
       <% end %>
       <div class="item">
         <div class="ui transparent icon input">
-            <%= form_tag "/search", method: "get", id: 'search_form' do %>
+            <%= form_tag "/", method: "get", id: 'search_form' do %>
               <input name="term" type="text" placeholder="Search for everything on e30" size="25" />
             <% end %>
           <i class="search link icon" onclick="submitForm()"></i>

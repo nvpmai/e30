@@ -16,5 +16,7 @@
  *= require users
  *= require sessions
  *= require articles
+ *= require navbar
+ *= require admin
  *= require_self
  */

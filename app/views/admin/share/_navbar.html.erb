@@ -1,0 +1,27 @@
+<div class="ui huge stackable menu">
+  <div class='ui center aligned container'>
+    <a class="item" href="/">Home</a>
+    <div class="right menu">
+      <%= link_to "Admin", '/admin', class: 'item'  %>
+      <%= link_to "Create article", new_admin_article_path, class: 'item'  %>
+      <%= link_to "Sign out", '/logout', method: 'delete', class: 'item'  %>
+      <div class="item">
+        <div class="ui transparent icon input">
+            <%= form_tag "/admin", method: "get", id: 'search_form' do %>
+              <input name="term" type="text" placeholder="Search for articles" size="25" />
+            <% end %>
+          <i class="search link icon" onclick="submitForm()"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  function submitForm() {
+    $('#search_form').submit()
+  }
+  $('#main_nav').sticky({
+    context: '#articles'
+  })
+</script>
