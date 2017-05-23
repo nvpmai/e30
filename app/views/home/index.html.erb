@@ -7,15 +7,20 @@
 
 <script type="text/javascript">
   var page = 1
-  var total_pages = <%= @articles.total_pages %>
+  var totalPages = <%= @articles.total_pages %>
+  var searchTerm = "<%= params[:term] %>"
   $(window).scroll(function() {
    if (isBottom()) {
-    if (total_pages > page) {
+    if (totalPages > page) {
       $( ".loader" ).addClass('active')
       page += 1
+      url = '/?page=' + page
+      if (searchTerm.length > 0) {
+        url += '&term=' + searchTerm
+      }
       $.ajax({
         method: 'get',
-        url: '/?page=' + page,
+        url: url,
         dataType: "script"
       }).done(function() {
          $( ".loader" ).removeClass('active')

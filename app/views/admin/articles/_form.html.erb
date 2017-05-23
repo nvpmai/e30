@@ -1,0 +1,30 @@
+<%= form_for [:admin, @article], html: {class: 'ui form article_form'} do |f| %>
+	<div class="field">
+		<%= f.label :title %>
+  	<%= f.text_field :title %>
+	</div>
+	<div class="field">
+		<%= f.label 'Link to featured image' %>
+  	<%= f.text_field :featured_image %>
+	</div>
+  <div class="field">
+  	<%= f.label :headline %>
+  	<%= f.text_area :headline, rows: '2' %>
+  </div>
+  <div class="field">
+  	<%= f.label :content %>
+  	<%= f.text_area :content, rows: '15' %>
+  </div>
+  <div class="ui submit button article_submit_btn">Submit</div>
+  <div class="ui error message"></div>
+<% end %>
+
+<script type="text/javascript">
+  $('.article_form').form({
+    fields: {
+      'article[title]': ['empty'],
+      'article[headline]': ['empty'],
+      'article[content]': ['empty']
+   }   
+  })
+</script>

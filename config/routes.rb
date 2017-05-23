@@ -5,8 +5,6 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  get '/search' => 'articles#search'
-  
   get    '/login' => 'sessions#new'
   post   '/login' => 'sessions#create'
   delete '/logout' => 'sessions#destroy'
@@ -15,4 +13,9 @@ Rails.application.routes.draw do
   resources :articles, only: [:index, :show]
 
   post '/toggle_like' => 'users#toggle_like'
+
+  namespace :admin do
+    root 'articles#index'
+    resources :articles
+  end
 end

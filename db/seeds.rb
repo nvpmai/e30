@@ -13,12 +13,10 @@ images = [
   'https://assets.entrepreneur.com/content/16x9/822/20150924062046-livspace.jpeg'
 ]
 
-Faker::Config.locale = :en
-
 10000.times do
   Article.create(
     title: Faker::Hacker.say_something_smart, 
     headline: Faker::Hacker.say_something_smart,
     featured_image: images.sample,
-    content: Faker::Lorem.paragraphs(rand(10..20)))
+    content: Faker::Lorem.paragraphs(rand(15..30)))
 end

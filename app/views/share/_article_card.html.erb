@@ -14,7 +14,7 @@
     <span class="left floated like">
       <% liked = current_user && @liked_ids.include?(article.id) ? 'liked' : '' %>
       <% icon_click = current_user ? "toggleLike(#{article.id})" : '' %>
-      <i class="like icon <%= liked %>" id="article_icon_<%= article.id %>" onclick="toggleLike(<%= article.id %>)"></i>
+      <i class="like icon <%= liked %>" id="article_icon_<%= article.id %>" onclick="<%= icon_click %>"></i>
       <% if liked == '' %>
         Like
       <% else %>
