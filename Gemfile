@@ -33,6 +33,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'kaminari'
 gem 'bcrypt'
 gem 'faker', '~> 1.6', '>= 1.6.3'
+gem 'semantic-ui-sass', git: 'https://github.com/doabit/semantic-ui-sass.git'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
