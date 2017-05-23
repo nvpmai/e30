@@ -13,3 +13,9 @@ function toggleLike(article_id) {
       }
     })
 }
+
+function handleHeartNotLogin(current_user) {
+  if (!current_user) {
+    $('#new_session_modal').modal('show')
+  }
+}
